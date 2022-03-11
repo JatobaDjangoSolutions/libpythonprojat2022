@@ -23,3 +23,8 @@ jobs:
       - name: Lint with flake8.
         run: |
           python -m flake8 .
+
+      - name: Automatic GA tests.
+        run: |
+          pytest libpythonprojat2022
+          
