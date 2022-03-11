@@ -19,6 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements_dev.txt
+          pip install pipenv codecov
 
       - name: Lint with flake8.
         run: |
@@ -26,5 +27,5 @@ jobs:
 
       - name: Automatic GA tests.
         run: |
-          pytest libpythonprojat2022
+          pytest libpythonprojat2022 --cov=libpythonprojat2022
           
