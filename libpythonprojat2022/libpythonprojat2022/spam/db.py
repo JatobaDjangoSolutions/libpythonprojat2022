@@ -1,6 +1,6 @@
 class Sessao:
     contador = 0
-    usuarios=[]
+    usuarios = []
 
     def salvar(self, usuario):
         Sessao.contador += 1
@@ -18,8 +18,8 @@ class Sessao:
 
 
 class Conexao:
-   def gerar_sessao(self):
-       return Sessao()
+    def gerar_sessao(self):
+        return Sessao()
 
-   def fechar(self):
-       pass
+    def fechar(self):
+        pass
