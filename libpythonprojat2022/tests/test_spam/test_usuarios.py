@@ -1,10 +1,10 @@
-from libpythonprojat2022.libpythonprojat2022.spam.db import Conexao
+from libpythonprojat2022.spam.db import Conexao
 from libpythonprojat2022.spam.modelos import Usuario
 
 
 def test_salvar_usuario():
     conexao = Conexao()
-    sessao = conexao.gerar_sessão()
+    sessao = conexao.gerar_sessao()
     usuario = Usuario(nome='Bruno')
     sessao.salvar(usuario)
     assert isinstance(usuario.id, int)
@@ -13,11 +13,10 @@ def test_salvar_usuario():
     conexao.fechar()
 
 
-def test_listar_usuarios():
-    global usuario
+def test_listar_usuario():
     conexao = Conexao()
     sessao = conexao.gerar_sessao()
-    usuarios = [Usuario(nome='Bruno'), Usuario(nome='Rafael')]
+    usuarios = [Usuario(nome='Gustavo'), Usuario(nome='Jorge')]
     for usuario in usuarios:
         sessao.salvar(usuario)
     assert usuarios == sessao.listar()
