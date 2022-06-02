@@ -18,14 +18,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements_dev.txt
-          pip install pipenv codecov
+          pip install -q pipenv
+          pipenv sync --dev
 
       - name: Lint with flake8.
         run: |
-          python -m flake8 .
+          pipenv run flake8 .
 
       - name: Automatic GA tests.
         run: |
-          pytest libpythonprojat2022 --cov=libpythonprojat2022
+          pipenv run pytest libpythonprojat2022
           
